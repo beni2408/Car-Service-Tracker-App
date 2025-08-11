@@ -3,8 +3,10 @@ import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import { useNavigate } from "react-router-dom";
 
 function ServiceCard({ details }) {
+  const navigate = useNavigate();
   return (
     <Box>
       <Paper
@@ -15,6 +17,7 @@ function ServiceCard({ details }) {
           width: "300px",
           padding: "20px",
         }}
+        onClick={() => navigate(`/services/${details.id}`)}
       >
         <Stack spacing={4}>
           <Paper elevation={3}>

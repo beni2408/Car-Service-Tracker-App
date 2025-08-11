@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import ServiceCard from "./servicecard";
+import ServiceCard from "../Components/ServiceCard.jsx";
 
 const AllServiceCards = ({ serviceDataprops }) => {
   return (
@@ -13,8 +13,8 @@ const AllServiceCards = ({ serviceDataprops }) => {
         margin: "20px",
       }}
     >
-      {serviceDataprops?.map((details, idx) => (
-        <ServiceCard details={details} key={idx} />
+      {serviceDataprops?.map((details) => (
+        <ServiceCard details={details} key={details.idx} />
       ))}
     </Box>
   );

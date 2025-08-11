@@ -1,8 +1,12 @@
-import { REST_HOST_NAME, SERVICE_ENDPOINT } from "../Backend/backend";
+// import { REST_HOST_NAME, SERVICE_ENDPOINT } from "../Backend/backend";
+import { REST_HOST_NAME, SERVICE_ENDPOINT } from "../Backend/backend.js";
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import AllServiceCards from "./Components/AllServiceCards.jsx";
 import { Route, Routes } from "react-router-dom";
+// import Services from "./Pages/services.jsx";
+import Services from "../Pages/services.jsx";
+
+import ServiceDetails from "../Pages/ServiceDetails.jsx";
 
 function App() {
   const [serviceDetails, setServiceDetails] = useState([]);
@@ -16,23 +20,19 @@ function App() {
   }, []);
 
   return (
-    <>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={<AllServiceCards serviceDataprops={serviceDetails} />}
-        />
-        <Route
-          path="/nppage"
-          element={<h1 style={{ color: "red" }}>No Page</h1>}
-        />
-      </Routes>
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={<Services serviceDetails={serviceDetails} error={error} />}
+      />
+      <Route path="/services/:id" element={<ServiceDetails />} />
+      <Route path="/nopage" element={<h1>No Page</h1>} />
+    </Routes>
   );
 }
 
 export default App;
+
 // function Searchcontainer() {
 //   return (
 //     <div className="search_container">
