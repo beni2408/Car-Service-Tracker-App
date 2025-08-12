@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
-import ServiceCard from "../Components/ServiceCard.jsx";
+// import ServiceCard from "./Components/ServiceCard.jsx";
+import ServiceCard from "./servicecard.jsx";
 
 const AllServiceCards = ({ serviceDataprops }) => {
   return (

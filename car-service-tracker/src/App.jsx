@@ -7,6 +7,8 @@ import { Route, Routes } from "react-router-dom";
 import Services from "../Pages/services.jsx";
 
 import ServiceDetails from "../Pages/ServiceDetails.jsx";
+import AddServiceDetails from "../Pages/Addservicedetails.jsx";
+import EditServiceDetails from "../Pages/EditServiceDetails.jsx";
 
 function App() {
   const [serviceDetails, setServiceDetails] = useState([]);
@@ -25,6 +27,8 @@ function App() {
         path="/"
         element={<Services serviceDetails={serviceDetails} error={error} />}
       />
+      <Route path="/serices/add" element={<AddServiceDetails />} />
+      <Route path="/serices/edit /:id" element={<EditServiceDetails />} />
       <Route path="/services/:id" element={<ServiceDetails />} />
       <Route path="/nopage" element={<h1>No Page</h1>} />
     </Routes>

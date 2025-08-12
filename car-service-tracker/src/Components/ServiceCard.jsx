@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import { Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
 
 function ServiceCard({ details }) {
   const navigate = useNavigate();
@@ -28,6 +29,10 @@ function ServiceCard({ details }) {
             <Typography>{details.vehicle_type}</Typography>
             <Typography>{details.date_of_delivery}</Typography>
             <Typography>{details.service_amount}</Typography>
+            <Box>
+              <Button>EDIT</Button>
+              <Button>DELETE</Button>
+            </Box>
           </Box>
         </Stack>
       </Paper>
